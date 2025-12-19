@@ -7,7 +7,7 @@ A simple and interactive **Streamlit UI** is used to demonstrate the algorithm c
 
 <img width="961" height="673" alt="Maxprofitproblem" src="https://github.com/user-attachments/assets/4c8cfa12-6cd4-400f-9f23-2f1e3d3f1d12" />
 
-Demo https://max-profit-algorithm.streamlit.app/
+Demo : https://max-profit-algorithm.streamlit.app/
 
 ---
 
