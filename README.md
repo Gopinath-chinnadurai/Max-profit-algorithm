@@ -5,7 +5,8 @@ This project solves the **Max Profit Optimization Problem**, where the goal is t
 The main constraint is that **only one building can be constructed at a time**, and each building starts generating revenue **only after its construction is completed**.  
 A simple and interactive **Streamlit UI** is used to demonstrate the algorithm clearly.
 
-<img width="961" height="673" alt="Maxprofitproblem" src="https://github.com/user-attachments/assets/4c8cfa12-6cd4-400f-9f23-2f1e3d3f1d12" />
+<img width="1078" height="722" alt="Screenshot 2026-01-14 005622" src="https://github.com/user-attachments/assets/5efdcce5-bbd9-4220-8c6c-758de2af2eb2" />
+
 
 Demo : https://max-profit-algorithm.streamlit.app/
 
