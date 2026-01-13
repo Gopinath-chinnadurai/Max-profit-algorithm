@@ -22,9 +22,9 @@ def calculate_profit(sequence, total_time):
     return total_profit
 
 
-def find_best_solution(total_time):
+def find_best_solutions(total_time):
     max_profit = 0
-    best_t = best_p = best_c = 0
+    best_solutions = []
 
     for t in range(0, total_time // 5 + 1):
         for p in range(0, total_time // 4 + 1):
@@ -35,16 +35,20 @@ def find_best_solution(total_time):
 
                 if profit > max_profit:
                     max_profit = profit
-                    best_t, best_p, best_c = t, p, c
+                    best_solutions = [(t, p, c)]
 
-    return best_t, best_p, best_c, max_profit
+                elif profit == max_profit and profit > 0:
+                    best_solutions.append((t, p, c))
+
+    return best_solutions, max_profit
 
 
+# ---------------- UI ---------------- 
 
 st.set_page_config(page_title="Max Profit Problem", layout="centered")
 
 st.title(" Max Profit Problem")
-st.write("Find the best combination of buildings to maximize profit.")
+st.write("Find **all optimal combinations** of buildings that maximize profit.")
 
 time_units = st.number_input(
     "Enter Total Time Units (n):",
@@ -53,11 +57,14 @@ time_units = st.number_input(
 )
 
 if st.button("Calculate Max Profit"):
-    t, p, c, profit = find_best_solution(time_units)
+    solutions, profit = find_best_solutions(time_units)
 
-    st.subheader(" Best Solution")
+    st.subheader(" Maximum Profit")
+    st.success(f"${profit:,}")
 
-    st.write(f" **Theatres (T):** {t}   |    **Pubs (P):** {p}   |    **Commercial Parks (C):** {c}")
+    st.subheader(" All Optimal Solutions")
 
-    st.subheader(" Total Earnings")
-    st.success(f"${profit}")
+    for idx, (t, p, c) in enumerate(solutions, 1):
+        st.markdown(
+    f"**Option {idx}:**  Theatre (T): {t} |  Pub (P): {p} |  Commercial Park (C): {c}"
+)
